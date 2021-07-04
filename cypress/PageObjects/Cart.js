@@ -28,4 +28,4 @@ class Cart {
     }
 
 }
-export default Cart;
+export const cart = new Cart();
