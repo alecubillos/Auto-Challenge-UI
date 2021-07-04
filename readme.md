@@ -1,6 +1,7 @@
 # UI Cypress Automation Challenge
 
-This project automates manual API test cases for an e-commerce application
+This project tests the application [Testing PLayground](https://github.com/antonyfuentes/testing-playground)
+Please follow the instructions in the aforementiond repo to install the application locally in your machine
 
 ## Getting Started
 
@@ -23,12 +24,5 @@ on Mac:
 
 1. Using the terminal navigate to the folder `Ale Cubillos - Auto Challenge`
    - To open Cypress' GUI run `npx cypress open` Then you will have the ability to pick the tests to run
-   - To run the tests from the terminal run the command `npm run test:chrome`
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+   - To run the tests from the terminal run the command `npm run test`
+   - To run the tests in head mode run the command `npm run test:head-mode`
