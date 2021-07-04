@@ -2,3 +2,4 @@
 videos
 support/commands.js
 node_modules/
+cypress/integration/AddProducts.js
