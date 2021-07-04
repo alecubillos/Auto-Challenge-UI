@@ -58,8 +58,5 @@ export class API {
             form: true
         })
     }
-    viewCart() {
-
-    }
 }
 export const api = new API();
