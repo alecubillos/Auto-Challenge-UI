@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/cypress run",
+    "test:head-mode": "npm run test -- --headed",
+    "test:chrome": "npm run test -- browser chrome",
+    "test:merge-report": "./node_modules/.bin/mochawesome-merge results/*.json > results/test_results.json && rm -rf results/mochawesome_*",
+    "test:html-report": "npx marge -o results --cdn results/test_results.json"
   },
   "author": "Ale Cubillos",
   "license": "ISC",
@@ -13,6 +17,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "cypress-woocommerce": "^0.1.1"
+    "faker": "^5.5.3",
+    "mochawesome": "^6.2.2"
   }
 }

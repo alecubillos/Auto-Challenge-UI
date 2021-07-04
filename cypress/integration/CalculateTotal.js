@@ -1,19 +1,22 @@
 /// <reference types="cypress" />
-import HomePage from './PageObjects/HomePage'
-import Cart from './PageObjects/Cart'
+import { homePage } from '../PageObjects/HomePage'
+import { api } from '../support/api-requests'
+import { cart } from '../PageObjects/Cart'
 
-const homePage = new HomePage()
-const cart = new Cart()
-const products = ['Sunglasses', 'Cap', 'Belt']
-let totalAdded = 0
 
 describe('Cart Totals are calculated correctly', () => {
-    before('The landing page is loaded', () => {
+    before(() => {
         cy.visit('')
+        api.addProductToCart('', 38, 3)
+        cart.navigate()
     })
     it('Verify the total amount of products in the shopping cart is calculated correctly', () => {
-        homePage.addProduct(products, 0)
-        homePage.clickCartContents()
-        cart.getCartItems()
+        cart.elements.getProductQuantity().should('have.value', '3')
+    })
+    it('Verify the subtotal in the order is calculated correctly', () => {
+        cart.elements.getCartSubtotal().should('contain.text', '$54.00')
+    })
+    it('Verify the total in the order is calculated correctly', () => {
+        cart.elements.getOrderTotal().should('contain.text', '$54.00')
     })
 })

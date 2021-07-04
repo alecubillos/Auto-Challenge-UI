@@ -1,3 +1,4 @@
+const faker = require('faker')
 class Checkout {
     url = '/checkout/';
     form = {
@@ -33,9 +34,8 @@ class Checkout {
             this.form.getBilingCity().type(data.city)
             this.form.getZipCode().type(data.zipCode)
             this.form.getBillingPhone().type(data.billingPhone)
-            this.form.getBillingEmail().type(data.billingEmail)
+            this.form.getBillingEmail().type(cy.faker.internet.email())
         })
     }
-
 }
 export const checkout = new Checkout();
