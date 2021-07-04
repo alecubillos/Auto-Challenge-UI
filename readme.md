@@ -1,7 +1,7 @@
 # UI Cypress Automation Challenge
 
-This project tests the application [Testing PLayground](https://github.com/antonyfuentes/testing-playground)
-Please follow the instructions in the aforementiond repo to install the application locally in your machine
+This project tests the application [Playground](https://github.com/antonyfuentes/testing-playground)
+Please follow the instructions in the aforementioned repo to install the application locally in your machine
 
 ## Getting Started
 
