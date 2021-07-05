@@ -6,7 +6,7 @@ import { cart } from '../PageObjects/Cart'
 
 describe('Cart Totals are calculated correctly', () => {
     before(() => {
-        cy.visit('')
+        homePage.navigate()
         api.addProductToCart('', 38, 3)
         cart.navigate()
     })

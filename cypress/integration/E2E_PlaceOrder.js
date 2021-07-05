@@ -26,7 +26,8 @@ describe('Verify the user is able to place an order', () => {
         checkout.form.getPlaceOrderButton().click()
 
 
-        confirmationPage.elements.getConfirmationMessage().should('have.text', 'Thank you. Your order has been received.')
+        confirmationPage.elements.getConfirmationMessage()
+            .should('have.text', 'Thank you. Your order has been received.')
 
 
     })

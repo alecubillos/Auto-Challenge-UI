@@ -4,7 +4,7 @@ export class API {
 
         cy.request({
             method: 'POST',
-            url: '/wp-json/wc/v3/products',
+            url: Cypress.env('productsEndpoint'),
             auth: {
                 user: Cypress.env('username'),
                 pass: Cypress.env('password')
@@ -38,7 +38,7 @@ export class API {
     deleteProduct(productID) {
         cy.request({
             method: 'DELETE',
-            url: `/wp-json/wc/v3/products/${Cypress.env('newProductID')}?force=true`,
+            url: `${Cypress.env('productsEndpoint')}${Cypress.env('newProductID')}?force=true`,
             auth: {
                 user: Cypress.env('username'),
                 pass: Cypress.env('password')
@@ -49,7 +49,7 @@ export class API {
     addProductToCart(productSKU, productID, quantity) {
         cy.request({
             method: 'POST',
-            url: '/?wc-ajax=add_to_cart',
+            url: Cypress.env('addToCartEndpoint'),
             body: {
                 product_sku: productSKU,
                 product_id: productID,

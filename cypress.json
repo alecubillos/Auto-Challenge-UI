@@ -1,7 +1,10 @@
 {
     "baseUrl": "http://localhost:8000",
+    
     "env":{
         "username": "automation",
-        "password": "automation"
+        "password": "automation",
+        "productsEndpoint": "/wp-json/wc/v3/products/",
+        "addToCartEndpoint": "/?wc-ajax=add_to_cart"
     }
 }
